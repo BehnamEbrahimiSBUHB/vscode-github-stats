@@ -170,7 +170,7 @@ function Main() {
         <input name="from" id="from" type="date" value=${from.toISOString().slice(0, 10)} onInput=${e => setFrom(new Date(e.target.value))} />
       </div>
       <div>
-        <label for="to">To:</labbel>
+        <label for="to">To:</label>
         <input name="to" id="to" type="date" value=${to.toISOString().slice(0, 10)} onInput=${e => setTo(new Date(e.target.value))} />
       </div>
       <div>
