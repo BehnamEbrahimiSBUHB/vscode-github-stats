@@ -18,7 +18,11 @@ jobs:
       - name: Scrape
         run: |
           set -e
-          gunzip -c docs/data.jsonl.gz > docs/data.jsonl
+          if [ -f docs/data.jsonl.gz ]; then
+            gunzip -c docs/data.jsonl.gz > docs/data.jsonl
+          else
+            touch docs/data.jsonl
+          fi
           node scrape.js >> docs/data.jsonl
           gzip -c docs/data.jsonl > docs/data.jsonl.gz
         env:
